@@ -1,0 +1,109 @@
+<! DOCTYPE HTML>
+<html>
+<head>
+
+	<meta property="og:url"           content="https://developers.facebook.com/docs/plugins/" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Your Website Title" />
+    <meta property="og:description"   content="Your description" />
+    <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
+
+</head>
+<body>
+
+<div id="image-container">
+   <canvas  width="800" height="500" id = "c"></canvas>
+    <div>
+    	
+      <span>Top Line:</span><br/>
+      <input id="topLineText" type="text"><br/>
+      <span>Bottom Line:</span><br/>
+      <input id="bottomLineText" type="text"><br/>
+      
+    </div>
+  </div>
+ <div>
+ 	<img id="img1" src="http://www.blahtrends.com/wp-content/plugins/Meme-Generator-deep-dot/images/uploaded/147818-nicolas-cage-you-don-t-say-meme.jpg" alt="Mountain View" style="width:304px;height:228px;" onclick="myfunction(this);" >
+ 	<img id="img2" src="https://imgflip.com/s/meme/Y-U-No.jpg" alt="Mountain View" style="width:304px;height:228px;"onclick="myfunction(this);">
+ 	<img id="img3" src="http://wallpaper.ultradownloads.com.br/277285_Papel-de-Parede-Meme-Spiderpman_1920x1200.jpg" alt="Mountain View" style="width:304px;height:228px;"onclick="myfunction(this);">
+ 	<img id="img4" src="http://www.blahtrends.com/wp-content/plugins/Meme-Generator-deep-dot/images/uploaded/2.jpg" alt="Mountain View" style="width:304px;height:228px;"
+ 	onclick="myfunction(this);">
+ 	<img id="img5" src="http://www.freelargeimages.com/wp-content/uploads/2014/11/Meme_faces-6.jpg" alt="Mountain View" style="width:304px;height:228px;"
+ 	onclick="myfunction(this);">
+ 	<img id="img6" src="http://www.insidebjj.com/wp-content/uploads/2013/08/happy-meme_00278611.png" alt="Mountain View" style="width:304px;height:228px;"
+ 	onclick="myfunction(this);">
+ 	<img id="img7" src="https://s-media-cache-ak0.pinimg.com/736x/c9/a9/ac/c9a9ac30945e123f26e8d47e639f54dd.jpg" alt="Mountain View" style="width:304px;height:228px;"
+ 	onclick="myfunction(this);">
+ 	<img id="img8" src="http://cdn.meme.am/images/5954737.jpg" alt="Mountain View" style="width:304px;height:228px;"
+ 	onclick="myfunction(this);">
+ 	<img id="img9" src="https://imgflip.com/s/meme/Creepy-Condescending-Wonka.jpg" alt="Mountain View" style="width:304px;height:228px;"
+ 	onclick="myfunction(this);">
+ 	<img id="img10" src="http://images.didioffendyou.com/1/15941753bc5d3d3a612.jpg" alt="Mountain View" style="width:304px;height:228px;"
+ 	onclick="myfunction(this);">
+ 	<img id="img11" src="https://imgflip.com/readImage?iid=16467733" alt="Mountain View" style="width:304px;height:228px;"
+ 	onclick="myfunction(this);">
+ 	<img id="img12" src="https://imgflip.com/s/meme/Picard-Wtf.jpg" alt="Mountain View" style="width:304px;height:228px;"
+ 	onclick="myfunction(this);">
+ 	<img id="img13" src="http://www.comicsandmemes.com/wp-content/uploads/2013/04/Success-baby.jpg" alt="Mountain View" style="width:304px;height:228px;"
+ 	onclick="myfunction(this);">
+ 	<img id="img14" src="http://memeorama.com/wp-content/uploads/2012/01/Success-Nun-Meme-Template-Blank.jpg" alt="Mountain View" style="width:304px;height:228px;"
+ 	onclick="myfunction(this);">
+ 	<img id="img15" src="https://imgflip.com/s/meme/Third-World-Skeptical-Kid.jpg" alt="Mountain View" style="width:304px;height:228px;"
+ 	onclick="myfunction(this);">
+ 	<img id="img16" src="http://orig01.deviantart.net/bc29/f/2013/134/d/2/new_blank_meme_by_art_is_my_bream-d65abqb.png" alt="Mountain View" style="width:304px;height:228px;"
+ 	onclick="myfunction(this);">
+ 	<img id="img17" src="https://i.imgflip.com/151p1.jpg" alt="Mountain View" style="width:304px;height:228px;"
+ 	onclick="myfunction(this);">
+ 	<img id="img18" src="http://www.computinglesson.com/uploads/1/3/7/4/13748232/1047323_orig.jpg" alt="Mountain View" style="width:304px;height:228px;"
+ 	onclick="myfunction(this);">
+ 	<img id="img19" src="http://www.hondagrom.net/forums/attachments/875d1374620718-grom-here-jackie-chan-my-brain-full-fuck-meme-blank-template-lol-wtf.jpg" alt="Mountain View" style="width:304px;height:228px;"
+ 	onclick="myfunction(this);">
+ 	<img id="img20" src="http://iliketowastemytime.com/sites/default/files/mind-bending-gif-images2.gif" alt="Mountain View" style="width:304px;height:228px;"
+ 	onclick="myfunction(this);">
+
+<script>
+function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+function myfunction (img){
+
+var uptext ;
+var downtext  ;
+if(document.getElementById("topLineText").value){
+	uptext = document.getElementById("topLineText").value;
+}else{
+	uptext = "hello";
+}
+if(document.getElementById("bottomLineText").value){
+	downtext = document.getElementById("bottomLineText").value;
+}else{
+	downtext = "hello";
+}
+
+var c = document.querySelector("#c");
+var ctx = c.getContext("2d");
+var image = new Image();
+
+image.src = img.src;
+image.onload = function() {
+//ctx.strokeStyle = "pink ";
+ctx.drawImage(image,0,0,800,500);
+ctx.fillStyle = getRandomColor();
+ctx.font = "bold 36px comic-sans";
+ctx.strokeText(uptext,30,50);
+ctx.strokeText(downtext,300,470);
+ctx.fillText(uptext,30,50);
+ctx.fillText(downtext,300,470);
+ }
+ }
+</script>
+
+ <!--canvas \\\\\\\\\\\\\\\\\\\\-->
+
+</body>	
+</html>
